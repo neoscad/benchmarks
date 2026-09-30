@@ -11,8 +11,9 @@ Only like is compared with like: a version's runs are all timed with that
 release's kit (the validator requires kit.version == neoscad.version) and
 with one timing method; a result timed with another method is listed under
 `excluded` instead of being mixed into the medians. Quick runs (7 models,
-one run each) and full runs cover different models, so their speedups are
-aggregated separately. Release baselines (source ci-baseline, committed by
+one run each) and full runs cover different models, and OpenSCAD's
+Manifold and CGAL backends differ several-fold, so speedups are aggregated
+per kind of run and per backend. Release baselines (source ci-baseline, committed by
 NeoSCAD's release workflow) are listed per target under `baselines`, apart
 from users' runs, and never enter the users' aggregates.
 """
@@ -85,8 +86,6 @@ def run_entry(r, run_id, path):
 
 
 def spread(values):
-    if not values:
-        return None
     v = sorted(values)
     return {
         "n": len(v),
@@ -97,16 +96,23 @@ def spread(values):
 
 
 def aggregate(runs):
+    """Counts, and the speedup's median and range per kind of run and per
+    OpenSCAD backend. Kept apart because they do not measure the same
+    thing: quick runs time 7 of the models, and CGAL is several times
+    slower than Manifold, so one median over both would describe neither."""
     with_ref = [x for x in runs if x["openscad"] is not None]
+    groups = collections.defaultdict(list)
+    for x in with_ref:
+        if x["geomean_speedup"] is not None:
+            groups[("quick" if x["quick"] else "full", x["openscad"]["backend"])].append(x["geomean_speedup"])
     return {
         "runs": len(runs),
         "with_openscad": len(with_ref),
         "without_openscad": len(runs) - len(with_ref),
-        "speedup": {
-            kind: spread([x["geomean_speedup"] for x in with_ref
-                          if x["quick"] == quick and x["geomean_speedup"] is not None])
-            for kind, quick in (("full", False), ("quick", True))
-        },
+        "speedup": [
+            {"runs_kind": kind, "backend": backend, **spread(v)}
+            for (kind, backend), v in sorted(groups.items())
+        ],
     }
 
 

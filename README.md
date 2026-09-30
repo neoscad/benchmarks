@@ -121,7 +121,8 @@ run's per-model best times, its geometric mean, and (with OpenSCAD) the
 geometric-mean speedup over the models both finished, computed as
 `neoscad bench` prints it. Per version and platform it gives the number of
 runs with and without OpenSCAD and the median and range of the speedup,
-quick and full runs separately, since they time different models. Only
+separately for quick and full runs (they time different models) and for
+OpenSCAD's Manifold and CGAL backends (which differ several-fold). Only
 results with the release's own kit and one timing method are compared;
 baselines are listed apart and never mixed into users' figures.
 

@@ -155,8 +155,10 @@ class Summarize(unittest.TestCase):
         mac = v["platforms"]["macos-aarch64"]
         run = mac["machines"]["Apple M4 Pro"][0]
         self.assertEqual(run["id"], 12)
-        self.assertEqual(mac["speedup"]["quick"]["n"], 1)
-        self.assertIsNone(mac["speedup"]["full"])
+        self.assertEqual([(g["runs_kind"], g["backend"], g["n"]) for g in mac["speedup"]],
+                         [("quick", "manifold", 1)])
+        lin = v["platforms"]["linux-x86_64"]
+        self.assertEqual([(g["runs_kind"], g["backend"]) for g in lin["speedup"]], [("quick", "cgal")])
 
     def test_speedup_matches_neoscad(self):
         # BenchResult::summary's rule: geometric mean over models both
