@@ -1,0 +1,145 @@
+# Checks each benchmark submission (an issue) and files the ones that pass
+# under results/<version>/<issue>.json, rebuilding summary.json in the same
+# commit. The rules are in scripts/validate.py and the README.
+#
+# A submission is recognised by its body's `### Result JSON` section, not
+# by the `benchmark` label: `neoscad bench --submit` files through
+# `gh issue create`, and a submitter without triage rights cannot label.
+#
+# The issue body is untrusted input. It never reaches a shell: the
+# validator reads it from the event payload, and only values it has checked
+# (a version matching the release pattern, the issue number) are passed on
+# through environment variables.
+name: Validate submission
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Issue number to check again (even if already accepted)
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  issues: write
+
+# One writer to main at a time, shared with summary.yml; queued, not
+# cancelled, so no submission is dropped.
+concurrency:
+  group: results
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    # An accepted issue is closed and filed; later edits to it are not
+    # re-checked (a maintainer can rerun it with workflow_dispatch). Bodies
+    # over 256 KB are ignored here and again in the validator.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.pull_request == null &&
+       contains(github.event.issue.body, '### Result JSON') &&
+       !contains(github.event.issue.labels.*.name, 'accepted'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Install the validator's dependencies
+        run: python -m pip install --quiet --no-deps -r scripts/requirements.txt
+
+      - name: Read the issue
+        env:
+          DISPATCH_ISSUE: ${{ inputs.issue }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            gh issue view "$DISPATCH_ISSUE" --json number,body,labels | jq '{issue: .}' >"$RUNNER_TEMP/event.json"
+          else
+            cp "$GITHUB_EVENT_PATH" "$RUNNER_TEMP/event.json"
+          fi
+
+      - name: Validate
+        id: decide
+        run: |
+          python scripts/validate.py --event "$RUNNER_TEMP/event.json" --out "$RUNNER_TEMP/decision.json"
+          d=$RUNNER_TEMP/decision.json
+          {
+            echo "status=$(jq -r .status "$d")"
+            echo "issue=$(jq -r .issue "$d")"
+            echo "version=$(jq -r '.version // ""' "$d")"
+            echo "path=$(jq -r '.path // ""' "$d")"
+          } >>"$GITHUB_OUTPUT"
+
+      - name: File the result
+        if: steps.decide.outputs.status == 'accepted'
+        env:
+          ISSUE: ${{ steps.decide.outputs.issue }}
+          VERSION: ${{ steps.decide.outputs.version }}
+          FILE: ${{ steps.decide.outputs.path }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Start again from main on every attempt rather than rebasing, so
+          # a result pushed meanwhile (a release baseline) is in the rebuilt
+          # summary.json and there is never a merge conflict to resolve.
+          for attempt in 1 2 3 4 5; do
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+            mkdir -p "results/$VERSION"
+            jq -j .content "$RUNNER_TEMP/decision.json" >"$FILE"
+            python scripts/summarize.py
+            git add "$FILE" summary.json
+            if git diff --cached --quiet; then
+              echo "$FILE is already filed unchanged"
+              exit 0
+            fi
+            git commit --quiet -m "Result #$ISSUE: neoscad $VERSION"
+            if git push --quiet origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push $FILE"
+          exit 1
+
+      - name: Accept
+        if: steps.decide.outputs.status == 'accepted'
+        env:
+          ISSUE: ${{ steps.decide.outputs.issue }}
+        run: |
+          jq -r .comment "$RUNNER_TEMP/decision.json" >"$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+          gh issue edit "$ISSUE" --add-label benchmark,accepted
+          gh issue edit "$ISSUE" --remove-label rejected || true
+          gh issue close "$ISSUE" --reason completed
+
+      - name: Reject
+        if: steps.decide.outputs.status == 'rejected'
+        env:
+          ISSUE: ${{ steps.decide.outputs.issue }}
+        run: |
+          jq -r .comment "$RUNNER_TEMP/decision.json" >"$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+          gh issue edit "$ISSUE" --add-label benchmark,rejected
+          gh issue edit "$ISSUE" --remove-label accepted || true
+
+      # The submitter should not be left waiting on a broken check (a
+      # GitHub outage, a release that could not be downloaded).
+      - name: Report a failure of the check itself
+        if: failure()
+        env:
+          ISSUE: ${{ inputs.issue || github.event.issue.number }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE" --body "The automatic check could not finish ([log]($RUN)); this is not a problem with your result. A maintainer will run it again."

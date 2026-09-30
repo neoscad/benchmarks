@@ -1,0 +1,7 @@
+# Issues here are benchmark submissions only; everything else belongs on
+# NeoSCAD's own tracker.
+blank_issues_enabled: false
+contact_links:
+  - name: NeoSCAD issues and questions
+    url: https://github.com/neoscad/neoscad/issues
+    about: Bugs, questions and ideas about NeoSCAD, including `neoscad bench` itself.

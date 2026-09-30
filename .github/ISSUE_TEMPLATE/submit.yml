@@ -1,0 +1,38 @@
+# The contract with `neoscad bench --submit` (neoscad/neoscad
+# crates/bench-core/src/submit.rs and docs/community-bench.md, "Submission
+# format"): this file's name, the field ids `result` and `notes` (the
+# pre-filled URL uses them) and the labels "Result JSON" and "Notes" (the
+# issue body's headings, which the validation reads). Change none of them
+# without changing neoscad too.
+name: Submit a benchmark result
+description: A result from `neoscad bench`, run with an official NeoSCAD release binary.
+title: "neoscad <version> on <OS>, <CPU>"
+labels: ["benchmark"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `neoscad bench --submit` fills this in for you. By hand: run
+        `neoscad bench --json result.json` (with OpenSCAD installed, it
+        offers to time it too, which makes the result far more useful) and
+        paste the file below.
+
+        Only results from **official release binaries** are accepted, and
+        everything here is public. A check runs when you submit or edit
+        and replies within a few minutes; see the
+        [README](https://github.com/neoscad/benchmarks#readme) for the rules.
+  - type: textarea
+    id: result
+    attributes:
+      label: Result JSON
+      description: The whole JSON file `neoscad bench` wrote, unedited.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional. Anything about the machine or the run worth knowing (cooling, power mode, other load). Don't include anything private.
+    validations:
+      required: false

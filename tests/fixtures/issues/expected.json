@@ -1,0 +1,107 @@
+{
+  "array-of-results": {
+    "reasons_contain": [
+      "one JSON object"
+    ],
+    "status": "rejected"
+  },
+  "ci-baseline-as-issue": {
+    "reasons_contain": [
+      "`source` must be `user`"
+    ],
+    "status": "rejected"
+  },
+  "forged-official-claim": {
+    "reasons_contain": [
+      "self-built or modified"
+    ],
+    "status": "rejected"
+  },
+  "future-timestamps": {
+    "reasons_contain": [
+      "in the future"
+    ],
+    "status": "rejected"
+  },
+  "identifying-strings": {
+    "reasons_contain": [
+      "a host name",
+      "a file path"
+    ],
+    "status": "rejected"
+  },
+  "local-build-unofficial": {
+    "reasons_contain": [
+      "not an official release build",
+      "self-built or modified"
+    ],
+    "status": "rejected"
+  },
+  "modified-unpacked-kit": {
+    "reasons_contain": [
+      "`kit.content_sha256` is not"
+    ],
+    "status": "rejected"
+  },
+  "not-a-submission": {
+    "reasons_contain": [],
+    "status": "ignored"
+  },
+  "not-json": {
+    "reasons_contain": [
+      "does not parse"
+    ],
+    "status": "rejected"
+  },
+  "other-kit-version": {
+    "reasons_contain": [
+      "`kit.version` is 0.1.1"
+    ],
+    "status": "rejected"
+  },
+  "release-without-community-bench": {
+    "reasons_contain": [
+      "released before community benchmarks"
+    ],
+    "status": "rejected"
+  },
+  "schema-extra-field": {
+    "reasons_contain": [
+      "does not match the schema",
+      "hostname"
+    ],
+    "status": "rejected"
+  },
+  "two-results": {
+    "reasons_contain": [
+      "more than one code block"
+    ],
+    "status": "rejected"
+  },
+  "unknown-method": {
+    "reasons_contain": [
+      "not a known timing method"
+    ],
+    "status": "rejected"
+  },
+  "valid-no-openscad-unpacked-kit": {
+    "reasons_contain": [],
+    "status": "accepted"
+  },
+  "valid-with-openscad": {
+    "reasons_contain": [],
+    "status": "accepted"
+  },
+  "wrong-kit": {
+    "reasons_contain": [
+      "`kit.archive_sha256` is not"
+    ],
+    "status": "rejected"
+  },
+  "zero-time": {
+    "reasons_contain": [
+      "a time must be above 0"
+    ],
+    "status": "rejected"
+  }
+}

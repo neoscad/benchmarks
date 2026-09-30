@@ -1,0 +1,270 @@
+{
+  "cold_start": {
+    "neoscad": {
+      "best_s": 0.00464,
+      "cpu_s": [
+        0.007,
+        0.003,
+        0.004,
+        0.003,
+        0.003
+      ],
+      "rc": 0,
+      "runs_s": [
+        0.00848,
+        0.0048,
+        0.00496,
+        0.0048,
+        0.00464
+      ],
+      "timed_out": false
+    },
+    "openscad": {
+      "best_s": 0.4185,
+      "cpu_s": [
+        0.049,
+        0.047,
+        0.047,
+        0.048,
+        0.047
+      ],
+      "rc": 0,
+      "runs_s": [
+        0.4338,
+        0.4203,
+        0.4194,
+        0.4284,
+        0.4185
+      ],
+      "timed_out": false
+    }
+  },
+  "finished_at": "2026-09-30T16:05:45Z",
+  "kit": {
+    "archive_sha256": "8eec8c60ac6c997de5a419792741ac06a0bace1d3fc11f65b8fdc28984d938fa",
+    "bosl2_commit": "9948313433166f58701a41f6e03cf19d6a70f42a",
+    "content_sha256": "ae65871e6d7e2b83b03c15a016e1bab5e7e174129df17b9da34dbbe2e4246445",
+    "neoscad_commit": "7c4ebc0660b8a5206fabb55dd2d20c4031319272",
+    "openscad_commit": "28fe66bcaf3e89239153cd16c34499c541d2841e",
+    "version": "0.0.1-fixture"
+  },
+  "machine": {
+    "arch": "x86_64",
+    "cores_efficiency": null,
+    "cores_logical": 16,
+    "cores_performance": null,
+    "cores_physical": 8,
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "hardware_model": null,
+    "load_after": [
+      0.9,
+      0.5,
+      0.3
+    ],
+    "load_before": [
+      0.4,
+      0.3,
+      0.2
+    ],
+    "memory_bytes": 34359738368,
+    "on_battery": null,
+    "os": "linux",
+    "os_version": "Ubuntu 24.04.1 LTS (kernel 6.8.0-45-generic)",
+    "translated": false
+  },
+  "method": {
+    "cold_start_runs": 5,
+    "quick": true,
+    "runs": 1,
+    "single_run_over_s": 60.0,
+    "timeout_s": 300.0,
+    "version": 1
+  },
+  "models": {
+    "bosl_gears__003": {
+      "neoscad": {
+        "best_s": 0.07968,
+        "cpu_s": [
+          0.053
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.07968
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 1.971,
+        "cpu_s": [
+          0.217
+        ],
+        "rc": 0,
+        "runs_s": [
+          1.971
+        ],
+        "timed_out": false
+      }
+    },
+    "bosl_screws__001": {
+      "neoscad": {
+        "best_s": 0.27568,
+        "cpu_s": [
+          0.346
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.27568
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 5.9589,
+        "cpu_s": [
+          1.168
+        ],
+        "rc": 0,
+        "runs_s": [
+          5.9589
+        ],
+        "timed_out": false
+      }
+    },
+    "csg_deep_union": {
+      "neoscad": {
+        "best_s": 0.06912,
+        "cpu_s": [
+          0.198
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.06912
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 1.2087,
+        "cpu_s": [
+          0.291
+        ],
+        "rc": 0,
+        "runs_s": [
+          1.2087
+        ],
+        "timed_out": false
+      }
+    },
+    "ex_csg_basic": {
+      "neoscad": {
+        "best_s": 0.01248,
+        "cpu_s": [
+          0.015
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.01248
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 0.5661,
+        "cpu_s": [
+          0.12
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.5661
+        ],
+        "timed_out": false
+      }
+    },
+    "extrude_twist": {
+      "neoscad": {
+        "best_s": 0.06048,
+        "cpu_s": [
+          0.039
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.06048
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 1.9566,
+        "cpu_s": [
+          0.217
+        ],
+        "rc": 0,
+        "runs_s": [
+          1.9566
+        ],
+        "timed_out": false
+      }
+    },
+    "mink_convex": {
+      "neoscad": {
+        "best_s": 0.03856,
+        "cpu_s": [
+          0.029
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.03856
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 0.6318,
+        "cpu_s": [
+          0.079
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.6318
+        ],
+        "timed_out": false
+      }
+    },
+    "text_30lines": {
+      "neoscad": {
+        "best_s": 0.19424,
+        "cpu_s": [
+          0.202
+        ],
+        "rc": 0,
+        "runs_s": [
+          0.19424
+        ],
+        "timed_out": false
+      },
+      "openscad": {
+        "best_s": 6.12,
+        "cpu_s": [
+          0.662
+        ],
+        "rc": 0,
+        "runs_s": [
+          6.12
+        ],
+        "timed_out": false
+      }
+    }
+  },
+  "neoscad": {
+    "official": true,
+    "official_check": "matched",
+    "sha256": "652901c0fa08e523da1cf7f3d6ea438eefdcbc2ed08a1ec8988c63c83ce529ec",
+    "target": "x86_64-unknown-linux-gnu",
+    "version": "0.0.1-fixture"
+  },
+  "openscad": {
+    "args": [],
+    "backend": "cgal",
+    "version": "OpenSCAD version 2021.01"
+  },
+  "schema": 1,
+  "skipped": {},
+  "source": "user",
+  "started_at": "2026-09-30T16:05:42Z",
+  "threads": 14
+}
