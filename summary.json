@@ -3289,11 +3289,150 @@
    "kit_archive_sha256": "39bdcc535a7f76f70dac513dd4ae82f68a775ac79e4236b47c5eb4b3f131bcdd",
    "kit_version": "0.3.1",
    "method_version": 1,
-   "platforms": {},
-   "runs": 0,
-   "speedup": [],
+   "platforms": {
+    "macos-aarch64": {
+     "arch": "aarch64",
+     "machines": {
+      "Apple M4 Pro": [
+       {
+        "arch": "aarch64",
+        "cold_start": {
+         "neoscad_s": 0.0036,
+         "openscad_s": 0.0467
+        },
+        "compared": 14,
+        "cores_efficiency": 4,
+        "cores_logical": 14,
+        "cores_performance": 10,
+        "cpu": "Apple M4 Pro",
+        "geomean_speedup": 4.483,
+        "hardware_model": "Mac16,7",
+        "id": 3,
+        "memory_bytes": 51539607552,
+        "models": {
+         "bosl_fractal_tree": {
+          "neoscad_s": 0.6295,
+          "openscad_s": 11.9108,
+          "speedup": 18.921
+         },
+         "bosl_gears__003": {
+          "neoscad_s": 0.0509,
+          "openscad_s": 0.2157,
+          "speedup": 4.238
+         },
+         "bosl_isosurface__006": {
+          "neoscad_s": 0.5697,
+          "openscad_s": 2.5029,
+          "speedup": 4.393
+         },
+         "bosl_screws__001": {
+          "neoscad_s": 0.1618,
+          "openscad_s": 0.6592,
+          "speedup": 4.074
+         },
+         "bosl_spring_handle": {
+          "neoscad_s": 0.201,
+          "openscad_s": 0.7553,
+          "speedup": 3.758
+         },
+         "csg_deep_union": {
+          "neoscad_s": 0.0373,
+          "openscad_s": 0.1405,
+          "speedup": 3.767
+         },
+         "csg_spheres": {
+          "neoscad_s": 0.4424,
+          "openscad_s": 1.1413,
+          "speedup": 2.58
+         },
+         "ex_csg_basic": {
+          "neoscad_s": 0.0084,
+          "openscad_s": 0.0633,
+          "speedup": 7.536
+         },
+         "ex_menger": {
+          "neoscad_s": 0.0932,
+          "openscad_s": 0.1567,
+          "speedup": 1.681
+         },
+         "extrude_twist": {
+          "neoscad_s": 0.0371,
+          "openscad_s": 0.2196,
+          "speedup": 5.919
+         },
+         "import_stl": {
+          "neoscad_s": 0.1126,
+          "openscad_s": 0.5602,
+          "speedup": 4.975
+         },
+         "mink_convex": {
+          "neoscad_s": 0.0241,
+          "openscad_s": 0.072,
+          "speedup": 2.988
+         },
+         "mink_nonconvex": {
+          "neoscad_s": 0.0105,
+          "openscad_s": 0.0636,
+          "speedup": 6.057
+         },
+         "text_30lines": {
+          "neoscad_s": 0.17,
+          "openscad_s": 0.6359,
+          "speedup": 3.741
+         }
+        },
+        "models_run": 14,
+        "neoscad_geomean_s": 0.0868,
+        "neoscad_ok": 14,
+        "neoscad_total_s": 2.5485,
+        "on_battery": false,
+        "openscad": {
+         "backend": "manifold",
+         "version": "OpenSCAD version 2026.09.23"
+        },
+        "os": "macos",
+        "os_version": "macOS 27.0 (26A428)",
+        "path": "results/0.3.1/3.json",
+        "quick": false,
+        "runs_per_model": 3,
+        "skipped": [],
+        "source": "user",
+        "started_at": "2026-10-02T23:21:24Z",
+        "target": "aarch64-apple-darwin",
+        "threads": 14,
+        "translated": false
+       }
+      ]
+     },
+     "os": "macos",
+     "runs": 1,
+     "speedup": [
+      {
+       "backend": "manifold",
+       "max": 4.483,
+       "median": 4.483,
+       "min": 4.483,
+       "n": 1,
+       "runs_kind": "full"
+      }
+     ],
+     "with_openscad": 1,
+     "without_openscad": 0
+    }
+   },
+   "runs": 1,
+   "speedup": [
+    {
+     "backend": "manifold",
+     "max": 4.483,
+     "median": 4.483,
+     "min": 4.483,
+     "n": 1,
+     "runs_kind": "full"
+    }
+   ],
    "version": "0.3.1",
-   "with_openscad": 0,
+   "with_openscad": 1,
    "without_openscad": 0
   }
  }
