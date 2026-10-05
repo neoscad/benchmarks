@@ -1,8 +1,9 @@
 {
  "format": 1,
- "latest": "0.4.1",
+ "latest": "0.4.2",
  "skipped_files": [],
  "version_order": [
+  "0.4.2",
   "0.4.1",
   "0.4.0",
   "0.3.1",
@@ -4302,6 +4303,440 @@
    "runs": 0,
    "speedup": [],
    "version": "0.4.1",
+   "with_openscad": 0,
+   "without_openscad": 0
+  },
+  "0.4.2": {
+   "baselines": {
+    "aarch64-apple-darwin": {
+     "arch": "aarch64",
+     "cold_start": {
+      "neoscad_s": 0.0044,
+      "openscad_s": null
+     },
+     "compared": 0,
+     "cores_efficiency": null,
+     "cores_logical": 3,
+     "cores_performance": null,
+     "cpu": "Apple M1 (Virtual)",
+     "geomean_speedup": null,
+     "hardware_model": "VirtualMac2,1",
+     "id": "ci-baseline-aarch64-apple-darwin",
+     "memory_bytes": 7516192768,
+     "models": {
+      "bosl_fractal_tree": {
+       "neoscad_s": 1.4216,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_gears__003": {
+       "neoscad_s": 0.1067,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_isosurface__006": {
+       "neoscad_s": 1.185,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_screws__001": {
+       "neoscad_s": 0.3807,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_spring_handle": {
+       "neoscad_s": 0.3481,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_deep_union": {
+       "neoscad_s": 0.0676,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_spheres": {
+       "neoscad_s": 1.2802,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_csg_basic": {
+       "neoscad_s": 0.0154,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_menger": {
+       "neoscad_s": 0.1899,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "extrude_twist": {
+       "neoscad_s": 0.0592,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "import_stl": {
+       "neoscad_s": 0.1916,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_convex": {
+       "neoscad_s": 0.0169,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_nonconvex": {
+       "neoscad_s": 0.0138,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "text_30lines": {
+       "neoscad_s": 0.2093,
+       "openscad_s": null,
+       "speedup": null
+      }
+     },
+     "models_run": 14,
+     "neoscad_geomean_s": 0.1514,
+     "neoscad_ok": 14,
+     "neoscad_total_s": 5.486,
+     "on_battery": false,
+     "openscad": null,
+     "os": "macos",
+     "os_version": "macOS 15.7.9 (24G830)",
+     "path": "results/0.4.2/ci-baseline-aarch64-apple-darwin.json",
+     "quick": false,
+     "runs_per_model": 3,
+     "skipped": [],
+     "source": "ci-baseline",
+     "started_at": "2026-10-05T15:04:16Z",
+     "target": "aarch64-apple-darwin",
+     "threads": 3,
+     "translated": false
+    },
+    "aarch64-unknown-linux-gnu": {
+     "arch": "aarch64",
+     "cold_start": {
+      "neoscad_s": 0.0026,
+      "openscad_s": null
+     },
+     "compared": 0,
+     "cores_efficiency": null,
+     "cores_logical": 4,
+     "cores_performance": null,
+     "cpu": null,
+     "geomean_speedup": null,
+     "hardware_model": null,
+     "id": "ci-baseline-aarch64-unknown-linux-gnu",
+     "memory_bytes": 16724652032,
+     "models": {
+      "bosl_fractal_tree": {
+       "neoscad_s": 1.0173,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_gears__003": {
+       "neoscad_s": 0.0795,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_isosurface__006": {
+       "neoscad_s": 1.5412,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_screws__001": {
+       "neoscad_s": 0.3497,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_spring_handle": {
+       "neoscad_s": 0.4208,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_deep_union": {
+       "neoscad_s": 0.0556,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_spheres": {
+       "neoscad_s": 0.7782,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_csg_basic": {
+       "neoscad_s": 0.0099,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_menger": {
+       "neoscad_s": 0.1764,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "extrude_twist": {
+       "neoscad_s": 0.0536,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "import_stl": {
+       "neoscad_s": 0.1664,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_convex": {
+       "neoscad_s": 0.0092,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_nonconvex": {
+       "neoscad_s": 0.0135,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "text_30lines": {
+       "neoscad_s": 0.2107,
+       "openscad_s": null,
+       "speedup": null
+      }
+     },
+     "models_run": 14,
+     "neoscad_geomean_s": 0.1282,
+     "neoscad_ok": 14,
+     "neoscad_total_s": 4.882,
+     "on_battery": false,
+     "openscad": null,
+     "os": "linux",
+     "os_version": "Ubuntu 22.04.5 LTS (kernel 6.8.0-1064-azure)",
+     "path": "results/0.4.2/ci-baseline-aarch64-unknown-linux-gnu.json",
+     "quick": false,
+     "runs_per_model": 3,
+     "skipped": [],
+     "source": "ci-baseline",
+     "started_at": "2026-10-05T15:04:08Z",
+     "target": "aarch64-unknown-linux-gnu",
+     "threads": 4,
+     "translated": null
+    },
+    "x86_64-pc-windows-msvc": {
+     "arch": "x86_64",
+     "cold_start": {
+      "neoscad_s": 0.0709,
+      "openscad_s": null
+     },
+     "compared": 0,
+     "cores_efficiency": null,
+     "cores_logical": 4,
+     "cores_performance": null,
+     "cpu": "AMD EPYC 9V74 80-Core Processor",
+     "geomean_speedup": null,
+     "hardware_model": null,
+     "id": "ci-baseline-x86_64-pc-windows-msvc",
+     "memory_bytes": 17174360064,
+     "models": {
+      "bosl_fractal_tree": {
+       "neoscad_s": 2.4513,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_gears__003": {
+       "neoscad_s": 0.1835,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_isosurface__006": {
+       "neoscad_s": 1.8988,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_screws__001": {
+       "neoscad_s": 0.5466,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_spring_handle": {
+       "neoscad_s": 0.672,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_deep_union": {
+       "neoscad_s": 0.1587,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_spheres": {
+       "neoscad_s": 1.7881,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_csg_basic": {
+       "neoscad_s": 0.0823,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_menger": {
+       "neoscad_s": 0.329,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "extrude_twist": {
+       "neoscad_s": 0.1774,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "import_stl": {
+       "neoscad_s": 0.3168,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_convex": {
+       "neoscad_s": 0.0811,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_nonconvex": {
+       "neoscad_s": 0.0859,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "text_30lines": {
+       "neoscad_s": 0.7158,
+       "openscad_s": null,
+       "speedup": null
+      }
+     },
+     "models_run": 14,
+     "neoscad_geomean_s": 0.3625,
+     "neoscad_ok": 14,
+     "neoscad_total_s": 9.4873,
+     "on_battery": null,
+     "openscad": null,
+     "os": "windows",
+     "os_version": "Microsoft Windows [Version 10.0.26100.33438]",
+     "path": "results/0.4.2/ci-baseline-x86_64-pc-windows-msvc.json",
+     "quick": false,
+     "runs_per_model": 3,
+     "skipped": [],
+     "source": "ci-baseline",
+     "started_at": "2026-10-05T15:04:14Z",
+     "target": "x86_64-pc-windows-msvc",
+     "threads": 4,
+     "translated": null
+    },
+    "x86_64-unknown-linux-gnu": {
+     "arch": "x86_64",
+     "cold_start": {
+      "neoscad_s": 0.0045,
+      "openscad_s": null
+     },
+     "compared": 0,
+     "cores_efficiency": null,
+     "cores_logical": 4,
+     "cores_performance": null,
+     "cpu": "AMD EPYC 7763 64-Core Processor",
+     "geomean_speedup": null,
+     "hardware_model": null,
+     "id": "ci-baseline-x86_64-unknown-linux-gnu",
+     "memory_bytes": 16765411328,
+     "models": {
+      "bosl_fractal_tree": {
+       "neoscad_s": 1.6875,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_gears__003": {
+       "neoscad_s": 0.1066,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_isosurface__006": {
+       "neoscad_s": 1.592,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_screws__001": {
+       "neoscad_s": 0.4214,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "bosl_spring_handle": {
+       "neoscad_s": 0.4999,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_deep_union": {
+       "neoscad_s": 0.0758,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "csg_spheres": {
+       "neoscad_s": 1.1066,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_csg_basic": {
+       "neoscad_s": 0.0192,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "ex_menger": {
+       "neoscad_s": 0.262,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "extrude_twist": {
+       "neoscad_s": 0.0741,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "import_stl": {
+       "neoscad_s": 0.223,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_convex": {
+       "neoscad_s": 0.0149,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "mink_nonconvex": {
+       "neoscad_s": 0.0241,
+       "openscad_s": null,
+       "speedup": null
+      },
+      "text_30lines": {
+       "neoscad_s": 0.3065,
+       "openscad_s": null,
+       "speedup": null
+      }
+     },
+     "models_run": 14,
+     "neoscad_geomean_s": 0.1827,
+     "neoscad_ok": 14,
+     "neoscad_total_s": 6.4136,
+     "on_battery": false,
+     "openscad": null,
+     "os": "linux",
+     "os_version": "Ubuntu 22.04.5 LTS (kernel 6.8.0-1064-azure)",
+     "path": "results/0.4.2/ci-baseline-x86_64-unknown-linux-gnu.json",
+     "quick": false,
+     "runs_per_model": 3,
+     "skipped": [],
+     "source": "ci-baseline",
+     "started_at": "2026-10-05T15:04:06Z",
+     "target": "x86_64-unknown-linux-gnu",
+     "threads": 4,
+     "translated": null
+    }
+   },
+   "excluded": [],
+   "kit_archive_sha256": "e6cc72177f7350bb34ab5b078efbbb0786347a131cc9792ad698da84f2ae345b",
+   "kit_version": "0.4.2",
+   "method_version": 1,
+   "platforms": {},
+   "runs": 0,
+   "speedup": [],
+   "version": "0.4.2",
    "with_openscad": 0,
    "without_openscad": 0
   }
