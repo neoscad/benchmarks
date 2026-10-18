@@ -1,0 +1,362 @@
+{
+  "schema": 1,
+  "source": "ci-baseline",
+  "neoscad": {
+    "version": "0.7.0",
+    "target": "aarch64-apple-darwin",
+    "sha256": "65db7cc0313a0179468a640db17097f4dcee45c990e80eec1b3d02df9f425139",
+    "official": true,
+    "official_check": "matched"
+  },
+  "kit": {
+    "version": "0.7.0",
+    "archive_sha256": "fd97a6f3aaff6b4f71abe8756b54867ea91decbf52cf9d876f8e0a3402f424ef",
+    "content_sha256": "09662dd9e6cab375d27ccacfd6d9bc3d6253da296761c971c0f3f68a24ef19ee",
+    "neoscad_commit": "ffd8a39c025dcc4d21cdc43936cd93b58d955664",
+    "bosl2_commit": "9948313433166f58701a41f6e03cf19d6a70f42a",
+    "openscad_commit": "28fe66bcaf3e89239153cd16c34499c541d2841e"
+  },
+  "method": {
+    "version": 1,
+    "runs": 3,
+    "cold_start_runs": 20,
+    "single_run_over_s": 60.0,
+    "timeout_s": 300.0,
+    "quick": false
+  },
+  "machine": {
+    "os": "macos",
+    "os_version": "macOS 15.7.9 (24G830)",
+    "arch": "aarch64",
+    "cpu": "Apple M1 (Virtual)",
+    "hardware_model": "VirtualMac2,1",
+    "cores_logical": 3,
+    "cores_physical": 3,
+    "cores_performance": null,
+    "cores_efficiency": null,
+    "memory_bytes": 7516192768,
+    "on_battery": false,
+    "load_before": [
+      10.98,
+      9.42,
+      7.45
+    ],
+    "load_after": [
+      12.18,
+      9.86,
+      7.66
+    ],
+    "translated": false
+  },
+  "threads": 3,
+  "openscad": null,
+  "cold_start": {
+    "neoscad": {
+      "rc": 0,
+      "timed_out": false,
+      "runs_s": [
+        0.0062,
+        0.004,
+        0.0039,
+        0.0038,
+        0.0039,
+        0.0045,
+        0.0042,
+        0.0048,
+        0.0061,
+        0.005,
+        0.0056,
+        0.0038,
+        0.0038,
+        0.0039,
+        0.0047,
+        0.0043,
+        0.0042,
+        0.0043,
+        0.0037,
+        0.0045
+      ],
+      "best_s": 0.0037,
+      "cpu_s": [
+        0.005,
+        0.004,
+        0.003,
+        0.003,
+        0.004,
+        0.004,
+        0.004,
+        0.004,
+        0.004,
+        0.004,
+        0.004,
+        0.003,
+        0.003,
+        0.003,
+        0.004,
+        0.004,
+        0.003,
+        0.004,
+        0.003,
+        0.005
+      ]
+    },
+    "openscad": null
+  },
+  "models": {
+    "bosl_fractal_tree": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          2.4179,
+          1.9535,
+          1.6758
+        ],
+        "best_s": 1.6758,
+        "cpu_s": [
+          2.808,
+          2.28,
+          2.197
+        ]
+      },
+      "openscad": null
+    },
+    "bosl_gears__003": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0796,
+          0.0775,
+          0.0939
+        ],
+        "best_s": 0.0775,
+        "cpu_s": [
+          0.078,
+          0.076,
+          0.09
+        ]
+      },
+      "openscad": null
+    },
+    "bosl_isosurface__006": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.9058,
+          0.9552,
+          0.9236
+        ],
+        "best_s": 0.9058,
+        "cpu_s": [
+          0.901,
+          0.936,
+          0.908
+        ]
+      },
+      "openscad": null
+    },
+    "bosl_screws__001": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.3508,
+          0.3254,
+          0.3582
+        ],
+        "best_s": 0.3254,
+        "cpu_s": [
+          0.359,
+          0.331,
+          0.333
+        ]
+      },
+      "openscad": null
+    },
+    "bosl_spring_handle": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.3647,
+          0.442,
+          0.344
+        ],
+        "best_s": 0.344,
+        "cpu_s": [
+          0.368,
+          0.358,
+          0.359
+        ]
+      },
+      "openscad": null
+    },
+    "csg_deep_union": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0697,
+          0.0567,
+          0.0654
+        ],
+        "best_s": 0.0567,
+        "cpu_s": [
+          0.08,
+          0.064,
+          0.073
+        ]
+      },
+      "openscad": null
+    },
+    "csg_spheres": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          1.1187,
+          1.002,
+          1.0131
+        ],
+        "best_s": 1.002,
+        "cpu_s": [
+          1.43,
+          1.338,
+          1.322
+        ]
+      },
+      "openscad": null
+    },
+    "ex_csg_basic": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0153,
+          0.0129,
+          0.0137
+        ],
+        "best_s": 0.0129,
+        "cpu_s": [
+          0.013,
+          0.011,
+          0.016
+        ]
+      },
+      "openscad": null
+    },
+    "ex_menger": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.2991,
+          0.2803,
+          0.3459
+        ],
+        "best_s": 0.2803,
+        "cpu_s": [
+          0.283,
+          0.298,
+          0.295
+        ]
+      },
+      "openscad": null
+    },
+    "extrude_twist": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0522,
+          0.0516,
+          0.0552
+        ],
+        "best_s": 0.0516,
+        "cpu_s": [
+          0.051,
+          0.051,
+          0.051
+        ]
+      },
+      "openscad": null
+    },
+    "import_stl": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.229,
+          0.1972,
+          0.248
+        ],
+        "best_s": 0.1972,
+        "cpu_s": [
+          0.211,
+          0.197,
+          0.187
+        ]
+      },
+      "openscad": null
+    },
+    "mink_convex": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0243,
+          0.0093,
+          0.0085
+        ],
+        "best_s": 0.0085,
+        "cpu_s": [
+          0.009,
+          0.009,
+          0.008
+        ]
+      },
+      "openscad": null
+    },
+    "mink_nonconvex": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.0115,
+          0.0105,
+          0.0107
+        ],
+        "best_s": 0.0105,
+        "cpu_s": [
+          0.012,
+          0.012,
+          0.012
+        ]
+      },
+      "openscad": null
+    },
+    "text_30lines": {
+      "neoscad": {
+        "rc": 0,
+        "timed_out": false,
+        "runs_s": [
+          0.2041,
+          0.2172,
+          0.2858
+        ],
+        "best_s": 0.2041,
+        "cpu_s": [
+          0.253,
+          0.263,
+          0.332
+        ]
+      },
+      "openscad": null
+    }
+  },
+  "skipped": {},
+  "started_at": "2026-10-18T00:23:25Z",
+  "finished_at": "2026-10-18T00:23:42Z"
+}
